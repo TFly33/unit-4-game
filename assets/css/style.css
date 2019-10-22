@@ -1,0 +1,60 @@
+
+.topcontainer
+{
+  margin:auto;
+  text-align: center;
+}
+.btn 
+{
+    width: 200px;
+    height: 200px;
+    background-repeat: no-repeat;
+    background-size: 100%; 
+    border: solid gray;
+    text-align: center;
+}
+
+#button-1
+{
+   background-image: url("../../assets/images/redRuby.jpeg");
+}
+
+#button-2
+{
+    background-image: url("../../assets/images/blueDiamond.jpeg");
+   
+}
+#button-3
+{
+    background-image: url("../../assets/images/yellowDiamond.jpeg");
+   
+}
+
+#button-4
+{
+    background-image: url("../../assets/images/greenDiamond.jpeg");
+   
+}
+
+.scoreSection
+{
+background-color:white;
+font-style: oblique;
+text-align: center;
+border: solid gray;
+
+}
+.textBox
+{
+background-color:white;
+font-style: oblique;
+text-align: center;
+border: solid gray;
+text-align: justify;
+
+}
+
+body
+{
+    background-image: url("../../assets/images/cool-background.png");
+}

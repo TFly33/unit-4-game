@@ -5,25 +5,49 @@
     <meta charset="UTF-8">
     <title>Crystals CollectorGame</title>
     <!-- Link CSS here -->
+    <link rel="stylesheet" type="text/css" href="assets/css/reset.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
     <!-- JQuery -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 </head>
 
 <body>
     <!-- let's use the buttons from the calculator assignment. We'll use the first four. Except, I don't want to set the values. I want them to be random, and then assign them. -->
-    <div class="card-body">
-        <button id="button-1" class="btn btn-primary number" value=""><span>Crystal 1 </span></button>
-        <button id="button-2" class="btn btn-primary number" value=""><span>Crystal 2</span></button>
-        <button id="button-3" class="btn btn-primary number" value=""><span>Crystal 3</span></button>
-        <button id="button-4" class="btn btn-primary number" value=""><span>Crystal 4</span></button>
+    <div class="container card-body topcontainer">
+        <button id="button-1" class="btn btn-primary number"><span> </span></button>
+        <button id="button-2" class="btn btn-primary number"><span> </span></button>
+        <button id="button-3" class="btn btn-primary number"><span> </span></button>
+        <button id="button-4" class="btn btn-primary number"><span> </span></button>
     </div>
 
-    <div class="scoreSection">
-        <p id="Score"> UserScore: </p>
-        <p><span id="computerGuess"> Computer Guess: </span> </p>
-        <p><span id="wins"> Wins: </span> </p>
-        <p><span id="losses"> Losses: </span> </p>
+    <div class="container">
+        <div class="row justify-content-md-center">
+            <div class="col-6 textBox">
+                <p> You will be given a random number at the start of the game. </p>
+                <p>There are four crystals above. By clicking on a crystal you will add a specific amount of points
+                    to
+                    your
+                    total score. </p>
+                <p> You win the game by matching your UserScore to the random Computer Guess. You lose the game if
+                    your
+                    total score goes above the Computer Guess.</p>
+                <p> The value of each crystal is hidden from you until you click on it, and the value will change
+                    after
+                    a
+                    win or loss.</p>
+            </div>
+            <div class="col-4 card-body scoreSection justify-content-md-center">
+                <p id="Score"> UserScore: </p>
+                <p><span id="computerGuess"> Computer Guess: </span> </p>
+                <p><span id="wins"> Wins: </span> </p>
+                <p><span id="losses"> Losses: </span> </p>
+            </div>
+        </div>
     </div>
+
+
 
 
     <script src="assets/javascript/game.js">
