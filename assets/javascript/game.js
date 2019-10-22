@@ -50,7 +50,6 @@ $(document).ready(function () {
     button2 = Math.floor(Math.random() * 12) + 1;
     button3 = Math.floor(Math.random() * 12) + 1;
     button4 = Math.floor(Math.random() * 12) + 1;
-    computerGuess = 1 + Math.floor(Math.random() * 120);
     // Let's console log that to make sure we're getting an assignment. 
     console.log(button1);
     console.log(button2);
@@ -62,96 +61,61 @@ $(document).ready(function () {
 
   // Now we need to make a win and loss variable function. 
   function winLoss() {
+
+
     if (userScore === computerGuess) {
       wins++;
       console.log(wins);
+      reset();
     }
-    if (userScore > computerGuess) {
+    else if (userScore > computerGuess) {
       losses++;
       console.log(losses);
+      reset();
     }
+
   }
   // We need a reset function. A function that will automatically reset the userscore and computerguess. 
-  function reset () {
+  function reset() {
+    $("#wins").text("Wins: " + wins);
+    $("#losses").text("Losses: " + losses);
+    console.log("---" + computerGuess);
+    console.log("---" + userScore);
     userScore = 0;
-    computerGuess = 0;
+    $("#Score").text("UserScore: " + userScore);
+    computerGuess = Math.floor(Math.random() * 120) + 1;
+    $("#computerGuess").text("Computer Guess: " + computerGuess);
     newGame();
   };
 
-// Our newGame function will run each time the game is reset. It will include randomized values for all four buttons. 
-  newGame();
+  // Our newGame function will run each time the game is reset. It will include randomized values for all four buttons, as well as a randomized computerguess. 
 
-  computerGuess = Math.floor(Math.random() * 120) + 1;
+  reset();
+
 
   $("#button-1").on("click", function () {
     userScore = button1 + userScore;
     console.log(userScore);
-    $("#Score").text("Result: " + userScore);
+    $("#Score").text("UserScore: " + userScore);
+    winLoss();
   });
   $("#button-2").on("click", function () {
     userScore = button2 + userScore;
     console.log(userScore);
-    $("#Score").text("Result: " + userScore);
+    $("#Score").text("UserScore: " + userScore);
+    winLoss();
   });
   $("#button-3").on("click", function () {
     userScore = button3 + userScore;
     console.log(userScore);
-    $("#Score").text("Result: " + userScore);
+    $("#Score").text("UserScore: " + userScore);
+    winLoss();
   });
   $("#button-4").on("click", function () {
     userScore = button4 + userScore;
     console.log(userScore);
-    $("#Score").text("Result: " + userScore);
+    $("#Score").text("UserScore: " + userScore);
+    winLoss();
   });
 
-  winLoss();
-  reset();
-
 });
-
-// Let's make the buttons and make sure we are getting a random value for each. 
-
-// Need to run the game before the clicking starts so the button's values are set. 
-
-// newGame();
-
-// $("#button-1").on("click", function () {
-//   userScore = userScore + button1;
-//   console.log(userScore);
-//   $("userScore").text(userScore);
-// });
-// $("#button-2").on("click", function () {
-//   userScore = userScore + button2;
-//   console.log(userScore);
-//   $("userScore").text(userScore);
-// });
-// $("#button-3").on("click", function () {
-//   userScore = userScore + button3;
-//   console.log(userScore);
-//   $("userScore").text(userScore);
-// });
-// $("#button-4").on("click", function () {
-//   userScore = userScore + button4;
-//   console.log(userScore);
-//   $("userScore").text(userScore);
-// });
-//         // Link text to HTML so the user can see it. 
-//       });
-
-
-//       // Link text to HTML so the user can see it. 
-//     });
-
-//     // Link text to HTML so the user can see it. 
-//   });
-
-//   // Link text to HTML so the user can see it. 
-// });
-
-
-
-//   Need a reset all function. 
-// Need an if else statement for the win/loss. That then leads to the reset, but the wins and losses stay the same. 
-// Need a userscore that everytime the crystal is clicked submits. 
-// Create four onclick functions for each button. 
-
