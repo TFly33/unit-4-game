@@ -51,10 +51,11 @@ font-style: oblique;
 text-align: center;
 border: solid gray;
 text-align: justify;
+padding:15px;
 
 }
 
 body
 {
-    background-image: url("../../assets/images/cool-background.png");
+    background-image: url("../../assets/images/background.png");
 }
