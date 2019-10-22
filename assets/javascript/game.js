@@ -28,30 +28,106 @@
 // * Each crystal should have a random hidden value between 1 - 12.
 
 
-$(document).ready(function() {
+$(document).ready(function () {
+  // I'm gonna start with some variables. 
 
-// I'm gonna start with some variables. 
+  // This is going to be my random number. I just need to make sure it doesn't reset when until a win or loss function happens. 
+  var computerGuess = Math.floor(Math.random() * 120) +1;
+  // Let's console log that to make sure the random number is being generated. 
+  console.log(computerGuess);
+  // Some variables. 
+  var wins = 0;
+  var losses = 0;
+  var userScore = 0;
+  var computerGuess = 0;
+  var button1 = 0;
+  var button2 = 0;
+  var button3 = 0;
+  var button4 = 0;
+  // Now we want to assign the random value to the buttons. But they need to be 1-12. 
+  function newGame() {
+     button1 = Math.floor(Math.random() * 12) + 1;
+     button2 = Math.floor(Math.random() * 12) + 1;
+     button3 = Math.floor(Math.random() * 12) + 1;
+     button4 = Math.floor(Math.random() * 12) + 1;
+     computerGuess = 1 + Math.floor(Math.random() * 120);
+    // Let's console log that to make sure we're getting an assignment. 
+    console.log(button1);
+    console.log(button2);
+    console.log(button3);
+    console.log(button4);
+    console.log(userScore);
+    console.log(computerGuess);
+  };
 
-// This is going to be my random number. I just need to make sure it doesn't reset when until a win or loss function happens. 
-var computerGuess = 1 + Math.floor(Math.random() * 120);
-// Let's console log that to make sure the random number is being generated. 
-console.log (computerGuess);
-// Now we want to assign the random value to the buttons. But they need to be 1-12. 
-var button1 = 1 + Math.floor(Math.random() * 12);
-var button2 = 1 + Math.floor(Math.random() * 12);
-var button3 = 1 + Math.floor(Math.random() * 12);
-var button4 = 1 + Math.floor(Math.random() * 12);
-// Let's console log that to make sure we're getting an assignment. 
-console.log (button1);
-console.log (button2);
-console.log (button3);
-console.log (button4);
-// alright, everything is correctly logging. 
-// Let's also create variables for wins and losses, we need them to start at but increase given certain conditions. 
-var wins = 0;
-var losses = 0;
-console.log (wins);
-console.log (losses);
+  newGame();
+
+  $("#button-1").on("click", function () {
+    userScore = button1 + userScore;
+    console.log(userScore);
+      $("#Score").text( "Result: " + userScore);
+  });
+  $("#button-2").on("click", function () {
+    userScore = button2 + userScore;
+    console.log(userScore);
+      $("#Score").text("Result: " + userScore);
+  });
+  $("#button-3").on("click", function () {
+    userScore = button3 + userScore;
+    console.log(userScore);
+     $("#Score").text("Result: " + userScore);
+  });
+  $("#button-4").on("click", function () {
+    userScore = button4 + userScore;
+    console.log(userScore);
+      $("#Score").text("Result: " + userScore);
+  });
+  
 });
 
+// Let's make the buttons and make sure we are getting a random value for each. 
+
+// Need to run the game before the clicking starts so the button's values are set. 
+
+// newGame();
+
+// $("#button-1").on("click", function () {
+//   userScore = userScore + button1;
+//   console.log(userScore);
+//   $("userScore").text(userScore);
+// });
+// $("#button-2").on("click", function () {
+//   userScore = userScore + button2;
+//   console.log(userScore);
+//   $("userScore").text(userScore);
+// });
+// $("#button-3").on("click", function () {
+//   userScore = userScore + button3;
+//   console.log(userScore);
+//   $("userScore").text(userScore);
+// });
+// $("#button-4").on("click", function () {
+//   userScore = userScore + button4;
+//   console.log(userScore);
+//   $("userScore").text(userScore);
+// });
+//         // Link text to HTML so the user can see it. 
+//       });
+
+
+//       // Link text to HTML so the user can see it. 
+//     });
+
+//     // Link text to HTML so the user can see it. 
+//   });
+
+//   // Link text to HTML so the user can see it. 
+// });
+
+
+
+//   Need a reset all function. 
+// Need an if else statement for the win/loss. That then leads to the reset, but the wins and losses stay the same. 
+// Need a userscore that everytime the crystal is clicked submits. 
+// Create four onclick functions for each button. 
 
